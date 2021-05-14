@@ -1,4 +1,4 @@
-import { ShoppingState } from './../reducers/shopping.reducer';
+import { ShoppingState } from '../reducers/shopping.reducer';
 
 export interface AppState {
   readonly shopping: ShoppingState

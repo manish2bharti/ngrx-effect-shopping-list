@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
   }
 
   addItem() {
-    this.newShoppingItem.id = uuid();
+  this.newShoppingItem.id = uuid();
 
     this.store.dispatch(new AddItemAction(this.newShoppingItem));
 

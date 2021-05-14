@@ -1,7 +1,8 @@
-import { Action } from "@ngrx/store";
-import { ShoppingItem } from './../models/shopping-item.model';
 
-export enum ShoppingActionTypes{
+import { Action } from '@ngrx/store';
+import { ShoppingItem } from '../models/shopping-item.model';
+
+export enum ShoppingActionTypes {
   LOAD_SHOPPING = '[SHOPPING] Load Shopping',
   LOAD_SHOPPING_SUCCESS = '[SHOPPING] Load Shopping Success',
   LOAD_SHOPPING_FAILURE = '[SHOPPING] Load Shopping Failure',
@@ -12,10 +13,10 @@ export enum ShoppingActionTypes{
   DELETE_ITEM_SUCCESS = '[SHOPPING] Delete Item Success',
   DELETE_ITEM_FAILURE = '[SHOPPING] Delete Item Failure'
 }
+
 export class LoadShoppingAction implements Action {
   readonly type = ShoppingActionTypes.LOAD_SHOPPING
 }
-
 export class LoadShoppingSuccessAction implements Action {
   readonly type = ShoppingActionTypes.LOAD_SHOPPING_SUCCESS
 
@@ -24,8 +25,8 @@ export class LoadShoppingSuccessAction implements Action {
 }
 export class LoadShoppingFailureAction implements Action {
   readonly type = ShoppingActionTypes.LOAD_SHOPPING_FAILURE
-
-  constructor(public payload: Error) {}
+  
+  constructor(public payload: string) {}
 }
 
 export class AddItemAction implements Action {

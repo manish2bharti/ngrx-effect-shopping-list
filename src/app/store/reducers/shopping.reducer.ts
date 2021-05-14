@@ -1,11 +1,12 @@
-import { ShoppingActionTypes, ShoppingAction } from "../actions/shopping.actions";
-import { ShoppingItem } from './../models/shopping-item.model';
+import { ShoppingActionTypes, ShoppingAction } from '../actions/shopping.actions';
+import { ShoppingItem } from '../models/shopping-item.model';
 
 export interface ShoppingState {
   list: ShoppingItem[],
   loading: boolean,
-  error: Error
+  error: Error;
 }
+
 
 const initialState: ShoppingState = {
   list: [],
@@ -26,14 +27,13 @@ export function ShoppingReducer(state: ShoppingState = initialState, action: Sho
         list: action.payload,
         loading: false
       }
-
-    case ShoppingActionTypes.LOAD_SHOPPING_FAILURE:
+    
+    case ShoppingActionTypes.LOAD_SHOPPING_FAILURE: 
       return {
         ...state,
-        error: action.payload,
-        loading: false
+        error: action.payload
       }
-
+    
     case ShoppingActionTypes.ADD_ITEM:
       return {
         ...state,
